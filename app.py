@@ -15,6 +15,7 @@ import os
 from dotenv import load_dotenv
 # import sys
 
+
 app = Flask(__name__, static_url_path='', static_folder='./')
 app.secret_key = "secret-key"
 
