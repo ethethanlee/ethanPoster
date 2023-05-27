@@ -19,9 +19,11 @@ from dotenv import load_dotenv
 app = Flask(__name__, static_url_path='', static_folder='./')
 app.secret_key = "secret-key"
 
-API_KEY=os.getenv("API_KEY")
+# API_KEY=os.getenv("API_KEY")
 app.config['SECRET_KEY'] = 'ethethanlee'
-PASSWORD_KEY=os.getenv("PASSWORD_KEY")
+# PASSWORD_KEY=os.getenv("PASSWORD_KEY")
+API_KEY='Mb6chMcTQzTePbVa2FVJnIO4H3rJkfgLOFzEAfV7'
+PASSWORD_KEY='lovehandle'
 
 UPLOAD_FOLDER = os.path.join('Static', 'uploads')
 
