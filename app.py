@@ -153,7 +153,7 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html')
+    return redirect("https://ethethanlee.github.io")
 
 
 if __name__ == "__main__":
