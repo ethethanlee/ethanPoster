@@ -145,10 +145,12 @@ def delete(id):
 @app.route('/about')
 def about():
     url=f'https://api.nasa.gov/planetary/apod?api_key=Mb6chMcTQzTePbVa2FVJnIO4H3rJkfgLOFzEAfV7'
-    req = requests.get(url)
-    data = json.loads(req.content)
-    img_url=data['url']
-    img=requests.get(img_url)
+    try:
+        req = requests.get(url)
+        data = json.loads(req.content)
+        img_url=data['url']
+    except:
+        img_url='https://npr.brightspotcdn.com/dims4/default/c92b22d/2147483647/strip/true/crop/880x570+0+0/resize/880x570!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fe9%2Fea%2F355f207a4215b42fef60c82da787%2Fgalaxy-webb-pd.jpg'
     return render_template('about.html', data=img_url) #second data
 
 @app.route('/contact')
