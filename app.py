@@ -52,6 +52,7 @@ def get_post(post_id):
 
 @app.route("/") #,methods=("GET", "POST"), strict_slashes=False
 def index():
+    return redirect("http://34.219.156.215:5000")
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     img_paths=[]
