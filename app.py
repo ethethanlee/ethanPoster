@@ -22,8 +22,8 @@ app.secret_key = "secret-key"
 # API_KEY=os.getenv("API_KEY")
 app.config['SECRET_KEY'] = 'ethethanlee'
 # PASSWORD_KEY=os.getenv("PASSWORD_KEY")
-API_KEY='Mb6chMcTQzTePbVa2FVJnIO4H3rJkfgLOFzEAfV7'
-PASSWORD_KEY='lovehandle'
+# API_KEY='Mb6chMcTQzTePbVa2FVJnIO4H3rJkfgLOFzEAfV7'
+# PASSWORD_KEY='lovehandle'
 
 UPLOAD_FOLDER = os.path.join('Static', 'uploads')
 
@@ -84,7 +84,7 @@ def create():
             flash('Title is required!')
         elif not pic:
             flash('Pic is required!')
-        elif key != PASSWORD_KEY:
+        elif key != 'lovehandle':
             flash('Correct password key is required!')
         else:
             
@@ -144,7 +144,7 @@ def delete(id):
 
 @app.route('/about')
 def about():
-    url=f'https://api.nasa.gov/planetary/apod?api_key={API_KEY}'
+    url=f'https://api.nasa.gov/planetary/apod?api_key=Mb6chMcTQzTePbVa2FVJnIO4H3rJkfgLOFzEAfV7'
     req = requests.get(url)
     data = json.loads(req.content)
     img_url=data['url']
